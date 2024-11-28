@@ -26,3 +26,57 @@ _testmain.go
 app
 .vscode
 debug
+
+## Python .gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Local development settings
+local_settings.py
+
+# Django
+*.pot
+*.pyc
+db.sqlite3
+media/
+
+# Flask
+instance/
+.webassets-cache
