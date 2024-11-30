@@ -6,7 +6,7 @@ steps:
       - '-t'
       - '${_GAR}/${_IMAGE}-backend:${_TAG}'
       - './backend/'
-      - -'.'
+      - '.'
     dir: .
   
   # Backend: Push the image to GAR
