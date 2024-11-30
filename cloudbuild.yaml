@@ -1,6 +1,6 @@
 steps:
   # Backend: Build the Docker image
-  - name: 'gcr.io/cloud-builders/ubuntu'
+  - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     # List all files in the current directory
     args:
