@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-
 	"github.com/gorilla/mux"
 )
 
@@ -13,6 +12,11 @@ type Product struct {
 	ID    int     `json:"id"`
 	Name  string  `json:"name"`
 	Price float64 `json:"price"`
+}
+
+//handler for the api/test endpoint
+func test(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello, World!"))
 }
 
 // Handler for the /api/products endpoint
@@ -34,6 +38,8 @@ func main() {
 
 	// Define routes
 	r.HandleFunc("/api/products", getProducts).Methods("GET")
+	r.HandleFunc("/api/test", test).Methods("GET")
+
 
 	// Start the server
 	const port = ":8080"
