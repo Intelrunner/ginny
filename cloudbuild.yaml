@@ -1,7 +1,7 @@
 steps:
   # Test the backend 
     # Step 1: Run unit tests
-  - name: 'gcr.io/cloud-builders/go'
+  - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
       - '-c'
