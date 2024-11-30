@@ -6,7 +6,7 @@ steps:
       - '-t'
       - '${_GAR}/${_IMAGE}-backend:${_TAG}'
       - '.'
-    dir: 'backend'
+    dir: './backend'
   # Backend: Push the image to GAR
   - name: 'gcr.io/cloud-builders/docker'
     args:
