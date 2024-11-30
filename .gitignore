@@ -147,10 +147,6 @@ ios/
 *.apk
 *.ipa
 
-# Docker
-Dockerfile
-docker-compose.yml
-.dockerignore
 
 # Other
 .env
