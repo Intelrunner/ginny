@@ -1,0 +1,18 @@
+steps:
+  # Backend: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_GAR}/${_IMAGE}-backend:${_TAG}'
+      - './backend'
+    dir: .
+  
+  # Backend: Push the image to GAR
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '${_GAR}/${_IMAGE}-backend:${_TAG}'
+
+# Configure timeout
+timeout: '1200s' # 20 minutes

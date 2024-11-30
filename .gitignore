@@ -80,3 +80,131 @@ media/
 # Flask
 instance/
 .webassets-cache
+
+# Node.js
+node_modules/
+npm-debug.log
+.npmrc
+.yarn-integrity
+yarn-error.log
+.pnp.*
+.pnp
+.yarn
+.yarn/*
+!yarn.lock
+!package-lock.json
+!package.json
+!pnpm-lock.yaml
+!pnpm-lock.yaml.swp
+
+# Next.js
+.next/
+out/
+
+# Nuxt.js
+.nuxt/
+dist/
+
+# Gatsby
+public/
+
+# Serverless
+.serverless/
+
+# Webpack
+dist/
+
+# Rollup
+dist/
+
+# Parcel
+dist/
+
+# Electron
+dist/
+.webpack/
+
+# Storybook
+.storybook/
+.cache/
+dist-storybook/
+
+# Cypress
+cypress/
+.cache/
+.nyc_output/
+
+# Jest
+coverage/
+
+# React Native
+.expo/
+.buckd/
+.gradle/
+build/
+android/
+ios/
+*.apk
+*.ipa
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Other
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+.env.ci
+.env.local.example
+.env.development.example
+.env.test.example
+.env.production.example
+.env.staging.example
+.env.ci.example
+.env.example
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.tmp.*
+
+# Other temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.rej
+*.pid
+*.pid.*
+*.lock
+*.lock.*
+*.cache
+*.cache.*
+*.cache/
+*.cache/*
+*.cache/**
+*.cache/**/*
+*.cache/**/**
+*.cache/**/**/*
+*.cache/**/**/**
+*.cache/**/**/**/*
+*.cache/**/**/**/**
+*.cache/**/**/**/**/*
+*.cache/**/**/**/**/**
+*.cache/**/**/**/**/**/*
+*.cache/**/**/**/**/**/**
+*.cache/**/**/**/**/**/**/*
