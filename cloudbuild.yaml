@@ -1,12 +1,8 @@
 steps:
   # Backend: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'build'
-      - '-t'
-      - '${_GAR}/${_IMAGE}-backend:${_TAG}'
-      - '.'
-    dir: './backend'
+    args: [ 'build', '-t', '${_GAR}/${_IMAGE}-backend:${_TAG}', '.' ]
+    dir: 'backend'
   # Backend: Push the image to GAR
   - name: 'gcr.io/cloud-builders/docker'
     args:
