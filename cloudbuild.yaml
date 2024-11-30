@@ -1,5 +1,16 @@
 steps:
-  # Backend: Build the Docker image
+  # Test the backend 
+    # Step 1: Run unit tests
+  - name: 'gcr.io/cloud-builders/go'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "Running tests..."
+        go test ./... -v
+        echo "Tests completed."
+
+  # Backend: Build the Docker image for the backend
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', '${_GAR}/${_IMAGE}-backend:${_TAG}', '.' ]
     dir: 'backend'
@@ -9,5 +20,10 @@ steps:
       - 'push'
       - '${_GAR}/${_IMAGE}-backend:${_TAG}'
 
+  # Deploy: Deploy the backend to GKE
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['set', 'image', 'deployment/${_IMAGE}-backend', '${_GAR}/${_IMAGE}-backend:${_TAG}']
+    env:
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}'
 # Configure timeout
 timeout: '1200s' # 20 minutes
