@@ -44,5 +44,5 @@ func main() {
 	// Start the server
 	const port = ":8080"
 	log.Printf("Server running on port %s", port)
-	log.Fatal(http.ListenAndServe(port, r))
+	log.Print(http.ListenAndServe(port, r))
 }
