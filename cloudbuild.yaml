@@ -25,5 +25,9 @@ steps:
     args: ['set', 'image', 'deployment/${_IMAGE}-backend', '${_GAR}/${_IMAGE}-backend:${_TAG}']
     env:
       - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}'
+      - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
+      - 'CLOUDSDK_CORE_REGION=${_REGION}'
+      - 'CLOUDSDK_CORE_PROJECT=${PROJECT}'
+    dir: 'manifests'
 # Configure timeout
 timeout: '1200s' # 20 minutes
