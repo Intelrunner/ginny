@@ -33,7 +33,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: bastion-pod
-  namespace: kube-system
+  namespace: default
   labels:
     app: bastion
 spec:
@@ -70,7 +70,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bastion-service
-  namespace: kube-system
+  namespace: default
   labels:
     app: bastion
 spec:
