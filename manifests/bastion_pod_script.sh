@@ -74,7 +74,7 @@ metadata:
   labels:
     app: bastion
 spec:
-  type: NodPort 
+  type: NodePort 
 # Expose the service externally
   selector:
     app: bastion
