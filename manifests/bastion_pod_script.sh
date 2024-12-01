@@ -3,11 +3,17 @@
 set -e
 
 # Configuration variables
-NAMESPACE="kube-system"
+NAMESPACE="default"
 SECRET_NAME="bastion-ssh-keys"
 POD_NAME="bastion-pod"
 SSH_KEY_PATH="./bastion-ssh-key"
 MANIFEST_FILE="./bastion-pod.yaml"
+
+# Step 0: Install ssh-keygen if not already installed
+if ! command -v ssh-keygen &> /dev/null; then
+  echo "ssh-keygen is not installed. Installing it..."
+  apt-get update && apt-get install -y openssh-client
+fi
 
 # Step 1: Generate SSH key pair
 echo "Generating SSH key pair..."
