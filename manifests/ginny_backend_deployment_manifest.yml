@@ -1,21 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: online-shop-backend
+  name: backend
   namespace: default
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: online-shop-backend
+      app: backend
   template:
     metadata:
       labels:
-        app: online-shop-backend
+        app: backend
     spec:
       containers:
       - name: backend
-        image: '${_GAR}/${_IMAGE}-backend:${_TAG}'
         ports:
         - containerPort: 8080
         resources:

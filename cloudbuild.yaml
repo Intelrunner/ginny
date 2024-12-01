@@ -26,6 +26,7 @@ steps:
     args:
       - run
       - --filename=manifests/ginny_backend_deployment_manifest.yml
+      - --image=${_GAR}/${_IMAGE}-backend:${_TAG}
       - --location=us-central1
       - --cluster=cluster
 # Configure timeout
