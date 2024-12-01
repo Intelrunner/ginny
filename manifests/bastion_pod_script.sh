@@ -32,8 +32,8 @@ cat <<EOF > $MANIFEST_FILE
 apiVersion: v1
 kind: Pod
 metadata:
-  name: $POD_NAME
-  namespace: $NAMESPACE
+  name: bastion-pod
+  namespace: kube-system
   labels:
     app: bastion
 spec:
@@ -57,12 +57,31 @@ spec:
   volumes:
   - name: ssh-keys
     secret:
-      secretName: $SECRET_NAME
+      secretName: bastion-ssh-keys
   securityContext:
     runAsUser: 1000
     runAsGroup: 1000
     fsGroup: 1000
   restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bastion-service
+  namespace: kube-system
+  labels:
+    app: bastion
+spec:
+  type: Nodport # Expose the service externally
+  selector:
+    app: bastion
+  ports:
+  - protocol: TCP
+    port: 22          # External SSH port
+    targetPort: 22    # Internal SSH port
+
 EOF
 
 # Step 4: Apply the bastion pod manifest
