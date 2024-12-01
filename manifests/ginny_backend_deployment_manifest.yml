@@ -3,25 +3,29 @@ kind: Deployment
 metadata:
   name: backend
   namespace: default
+  labels:                     # Add labels for better organization
+    app: backend
 spec:
-  replicas: 2
+  replicas: 2                 # Number of desired pod replicas
   selector:
     matchLabels:
       app: backend
   template:
     metadata:
       labels:
-        app: backend
+        app: backend          # Ensure labels match the selector for proper association
     spec:
       containers:
       - name: backend
         image: us-central1-docker.pkg.dev/erics-outpost/ginny/ginny-backend:latest
+        imagePullPolicy: Always  # Best practice for the `latest` tag
         ports:
         - containerPort: 8080
-        resources:
+        resources:             # Define resource requests and limits
           requests:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "128Mi"    # Minimum memory required for scheduling
+            cpu: "500m"        # Minimum CPU required for scheduling
           limits:
-            memory: "256Mi"
-            cpu: "1000m"
+            memory: "256Mi"    # Maximum memory the container can use
+            cpu: "1000m"       # Maximum CPU the container can use
+      restartPolicy: Always    # Ensures the container restarts on failure
