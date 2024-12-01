@@ -30,7 +30,7 @@ steps:
       - --location=us-central1
       - --cluster=cluster
 # Configure timeout
-  - name: 'gcr.io/cloud-builders/bash'
+  - name: 'gcr.io/cloud-builders/curl'
     entrypoint: '/bin/bash'
     args:
       - '-c'
