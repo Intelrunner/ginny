@@ -29,6 +29,8 @@ steps:
       - --image=${_GAR}/${_IMAGE}-backend:${_TAG}
       - --location=us-central1
       - --cluster=cluster
+      - --COLLECTION_ID=${_COLLECTION_ID}
+      - --PROJECT_ID=${_PROJECT_ID}
 # Configure timeout
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: '/bin/bash'
